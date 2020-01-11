@@ -28,11 +28,11 @@ class Kernel extends HttpKernel
         'web' => [
             EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-        //    \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
-        //    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        //    VerifyCsrfToken::class,
-        //    'throttle:100,1',
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            VerifyCsrfToken::class,
+            'throttle:100,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
