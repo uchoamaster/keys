@@ -19,7 +19,7 @@
     </a>
 
 
-    <a title="Random page" class="text-black " rel="nofollow" href="{{ route($routeBase.'.random') }}">
+    <a title="Random page" class="text-black" rel="nofollow" href="{{ route($routeBase.'.random') }}">
         <span class="inline-block w-8">@include('components.svg.random')</span>
     </a>
 

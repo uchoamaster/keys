@@ -15,7 +15,7 @@
         <p class="mb-8 leading-normal">
             There aren't THAT many bitcoin pages
             <br><br>
-            <a class="text-black underline" href="{{ route('btcPages.random') }}">Try a random page instead</a>
+            <a rel="nofollow" class="text-black underline" href="{{ route('btcPages.random') }}">Try a random page instead</a>
         </p>
 
     </div>
