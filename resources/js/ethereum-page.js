@@ -1,5 +1,5 @@
 const apiBaseUrl = `https://api.etherscan.io/api?module=account&action=balancemulti&apikey=${process.env.MIX_ETHERSCAN_API_KEY}&address=`;
-// const apiBaseUrl = 'http://keys.pk/api/v1/eth/balance-empty?address=';
+// const apiBaseUrl = 'http://keys.test/api/v1/eth/balance-empty?address=';
 const apiCallDelayMs = 750;
 
 

@@ -7,7 +7,7 @@ require 'recipe/laravel.php';
 set('application', 'Keys');
 set('repository', 'git@github.com:SjorsO/keys.git');
 set('git_tty', true);
-set('keep_releases', 3);
+set('keep_releases', 2);
 
 host('sjors@keys.lol')->set('deploy_path', '/var/www/keys');
 
@@ -15,8 +15,6 @@ host('sjors@keys.lol')->set('deploy_path', '/var/www/keys');
 task('build-npm-assets', 'npm i; npm run prod');
 
 task('clear-opcache', 'sudo service php7.3-fpm reload');
-
-task('generate-sitemap', 'php artisan keys:generate-sitemap');
 
 
 after('deploy:failed', 'deploy:unlock');
@@ -46,8 +44,6 @@ task('deploy', [
 
     'clear-opcache',
     'artisan:queue:restart',
-
-    'generate-sitemap',
 
     'deploy:unlock',
     'cleanup',

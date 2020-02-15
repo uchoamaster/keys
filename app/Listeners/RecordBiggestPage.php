@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\RandomPageGenerated;
 use App\Models\BiggestRandomPage;
+use Illuminate\Support\Str;
 
 class RecordBiggestPage
 {
@@ -29,6 +30,6 @@ class RecordBiggestPage
             return true;
         }
 
-        return starts_with($event->pageNumber, '90462');
+        return Str::startsWith($event->pageNumber, '90462');
     }
 }

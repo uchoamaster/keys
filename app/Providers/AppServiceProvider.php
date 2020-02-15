@@ -2,21 +2,30 @@
 
 namespace App\Providers;
 
-use App\Keys\Human;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
+use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client as DropboxClient;
+use Spatie\FlysystemDropbox\DropboxAdapter;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton('human-verification', function () {
-            return new Human();
-        });
+        //
     }
 
     public function boot()
     {
         Route::pattern('pageNumber', '^\d+$');
+
+        Storage::extend('dropbox', function ($app, $config) {
+            $client = new DropboxClient(
+                config('filesystems.disks.dropbox.key')
+            );
+
+            return new Filesystem(new DropboxAdapter($client));
+        });
     }
 }

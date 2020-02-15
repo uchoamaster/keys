@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\RandomPageGenerated;
 use App\Models\SmallestRandomPage;
+use Illuminate\Support\Str;
 
 class RecordSmallestPage
 {
@@ -29,6 +30,6 @@ class RecordSmallestPage
             return true;
         }
 
-        return starts_with($event->pageNumber, '00000');
+        return Str::startsWith($event->pageNumber, '00000');
     }
 }

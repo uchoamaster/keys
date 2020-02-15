@@ -21,7 +21,7 @@
     <php>
         <server name="APP_ENV" value="testing"/>
         <server name="APP_KEY" value="base64:ZJG+W0NsaCq/T27PpstfKXW4cyY6l4IxoqqnsWyqHbo="/>
-        <server name="APP_URL" value="http://keys.pk"/>
+        <server name="APP_URL" value="http://keys.test"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
         <server name="SESSION_DRIVER" value="array"/>
