@@ -29,14 +29,14 @@ class ValidBitcoinWifRuleTest extends TestCase
     private function assertPasses($wif)
     {
         $this->assertTrue(
-            (new ValidBitcoinWif)->passes(str_random(), $wif)
+            (new ValidBitcoinWif)->passes('attribute', $wif)
         );
     }
 
     private function assertFails($wif)
     {
         $this->assertFalse(
-            (new ValidBitcoinWif)->passes(str_random(), $wif)
+            (new ValidBitcoinWif)->passes('attribute', $wif)
         );
     }
 }

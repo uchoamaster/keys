@@ -1,5 +1,5 @@
 @php
-    $coinType = str_before($routeBase, 'Pages');
+    $coinType = Str::before($routeBase, 'Pages');
 @endphp
 
 <div class="flex justify-between items-center max-w-sm mx-auto">
