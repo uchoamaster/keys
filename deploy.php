@@ -7,7 +7,10 @@ require 'recipe/laravel.php';
 set('application', 'Keys');
 set('repository', 'git@github.com:SjorsO/keys.git');
 set('git_tty', true);
-set('keep_releases', 2);
+
+// Keeping less than 3 releases seems to cause some files to get written
+// to "releases/x/storage" instead of the correct shared symlink.
+set('keep_releases', 3);
 
 host('sjors@keys.lol')->set('deploy_path', '/var/www/keys');
 
