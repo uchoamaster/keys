@@ -20,7 +20,7 @@ task('build-npm-assets', 'npm i; npm run prod');
 task('clear-opcache', 'sudo service php7.3-fpm reload');
 
 task('delete-unnecessary-release-dirs', function () {
-    $directoryNames = ['node_modules', 'tests'];
+    $directoryNames = ['node_modules', 'tests', '.git'];
 
     $deployPath = get('deploy_path');
 
