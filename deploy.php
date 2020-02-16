@@ -19,6 +19,26 @@ task('build-npm-assets', 'npm i; npm run prod');
 
 task('clear-opcache', 'sudo service php7.3-fpm reload');
 
+task('delete-unnecessary-release-dirs', function () {
+    $directoryNames = ['node_modules', 'tests'];
+
+    $deployPath = get('deploy_path');
+
+    // All releases, except the current release
+    $releases = get('releases_list');
+
+    // Name of the current release
+    array_push($releases, get('release_name'));
+
+    foreach ($directoryNames as $directoryName) {
+        foreach ($releases as $release) {
+            $directoryPath = escapeshellarg("$deployPath/releases/$release/$directoryName");
+
+            run("if [ -d $directoryPath ]; then rm -rf $directoryPath; fi");
+        }
+    }
+});
+
 
 after('deploy:failed', 'deploy:unlock');
 
@@ -50,4 +70,5 @@ task('deploy', [
 
     'deploy:unlock',
     'cleanup',
+    'delete-unnecessary-release-dirs',
 ]);
