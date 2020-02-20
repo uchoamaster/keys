@@ -17,7 +17,7 @@ host('sjors@keys.lol')->set('deploy_path', '/var/www/keys');
 
 task('build-npm-assets', 'npm i; npm run prod');
 
-task('clear-opcache', 'sudo service php7.3-fpm reload');
+task('clear-opcache', 'sudo service php7.4-fpm reload');
 
 task('delete-unnecessary-release-dirs', function () {
     $directoryNames = ['node_modules', 'tests', '.git'];
