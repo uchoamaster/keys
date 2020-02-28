@@ -22,6 +22,9 @@
     <link rel="stylesheet" type="text/css" href="{{ mix('css/main.css') }}" />
 
     @if(App::environment('production'))
+        {{-- auto-ads --}}
+        <script data-ad-client="ca-pub-8027891891391991" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85344990-4"></script>
