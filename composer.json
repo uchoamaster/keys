@@ -12,6 +12,7 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^2.0",
         "sjorso/enum": "^1.0",
+        "sjorso/gobble": "^1.4",
         "spatie/laravel-sitemap": "^5.0"
     },
     "require-dev": {
