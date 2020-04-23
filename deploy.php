@@ -6,11 +6,14 @@ require 'recipe/laravel.php';
 
 set('application', 'Keys');
 set('repository', 'git@github.com:SjorsO/keys.git');
-set('git_tty', true);
 
-// Keeping less than 3 releases seems to cause some files to get written
-// to "releases/x/storage" instead of the correct shared symlink.
-set('keep_releases', 3);
+// Has to be false, otherwise deploying from a Github action will fail with an
+// "TTY mode requires /dev/tty to be read/writable." error.
+//
+// If this is set to "true", you can see the "git pull" output.
+set('git_tty', false);
+
+set('keep_releases', 5);
 
 host('sjors@keys.lol')->set('deploy_path', '/var/www/keys');
 
