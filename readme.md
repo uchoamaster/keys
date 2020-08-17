@@ -18,7 +18,7 @@ composer install
 
 php artisan key:generate
 
-artisan migrate:fresh
+php artisan migrate:fresh
  
 npm install && npm run dev
 ```
