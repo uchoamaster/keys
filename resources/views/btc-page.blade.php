@@ -27,6 +27,10 @@
     @endif
 
 
+    <div class="bg-yellow-light p-2 my-4 text-center">
+        Automatic balance checking no longer works due to a change in the blockchain.com API
+    </div>
+
 {{--    <div class="hidden sm:block">--}}
 {{--    @include('components.ads.key-page-top')--}}
 {{--    </div>--}}
